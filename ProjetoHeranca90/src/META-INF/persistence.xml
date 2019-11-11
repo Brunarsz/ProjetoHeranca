@@ -8,7 +8,7 @@
 	<persistence-unit name="projetoheranca91" transaction-type="RESOURCE_LOCAL">
 		<properties>
 			<!--  Propriedades da conexão com o Banco de Dados -->
-			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://192.168.4.118:5432/clara_Bruna_J" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://192.168.4.118:5432/clara_Bruna_TC" />
 			<property name="javax.persistence.jdbc.user" value="poobd" />
 			<property name="javax.persistence.jdbc.password" value="poobd" />
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
