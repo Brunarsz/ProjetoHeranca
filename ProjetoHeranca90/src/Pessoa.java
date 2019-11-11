@@ -1,27 +1,30 @@
 import java.sql.Date;
 
+import javax.annotation.Generated;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
 @Entity
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "tipo", length = 1, discriminatorType = DiscriminatorType.STRING)
+@Inheritance(strategy=InheritanceType.JOINED)
 public abstract class Pessoa implements Identificavel {
 
 	@Id
-	private Long Id;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Long id;
 	private String nome;
 	private String endereco;
 	private Date Data_de_Nascimento;
 	public Long getId() {
-		return Id;
+		return id;
 	}
 	public void setId(Long id) {
-		Id = id;
+		this.id = id;
 	}
 	public String getNome() {
 		return nome;
@@ -56,10 +59,10 @@ public abstract class Pessoa implements Identificavel {
 				return false;
 		} else if (!Data_de_Nascimento.equals(other.Data_de_Nascimento))
 			return false;
-		if (Id == null) {
-			if (other.Id != null)
+		if (id == null) {
+			if (other.id != null)
 				return false;
-		} else if (!Id.equals(other.Id))
+		} else if (!id.equals(other.id))
 			return false;
 		if (endereco == null) {
 			if (other.endereco != null)

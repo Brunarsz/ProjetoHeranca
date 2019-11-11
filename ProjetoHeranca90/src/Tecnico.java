@@ -3,7 +3,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-@DiscriminatorValue(value = "T")
 public class Tecnico extends Pessoa {
 	
 	
